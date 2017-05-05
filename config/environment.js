@@ -6,6 +6,21 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+
+    firebase: {
+      apiKey: "AIzaSyBwiqudDOw8hRsLtPzZ7U5m5XDylBQB8R8",
+      authDomain: "bookstore-c4b4b.firebaseapp.com",
+      databaseURL: "https://bookstore-c4b4b.firebaseio.com",
+      storageBucket: "bookstore-c4b4b.appspot.com",
+    },
+
+    // if using ember-cli-content-security-policy
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,22 +31,6 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
-    firebase: {
-      apiKey: "AIzaSyBwiqudDOw8hRsLtPzZ7U5m5XDylBQB8R8",
-      authDomain: "bookstore-c4b4b.firebaseapp.com",
-      databaseURL: "https://bookstore-c4b4b.firebaseio.com",
-      storageBucket: "bookstore-c4b4b.appspot.com",
-    },
-
-
-    // if using ember-cli-content-security-policy
-    contentSecurityPolicy: {
-      'script-src': "'self' 'unsafe-eval' apis.google.com",
-      'frame-src': "'self' https://*.firebaseapp.com",
-      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
-    },
-
 
     APP: {
       // Here you can pass flags/options to your application instance
