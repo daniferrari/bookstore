@@ -6,14 +6,15 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Price</th>
+      <th>Author</th>
+
     </tr>
   </thead>
   <tbody>
   {{#each model as |book|}}
     <tr>
-      <th>{{book.title}}</th>
-      <td>{{book.price}}</td>
+      <th>{{#link-to 'books.view' book.id }}{{book.title}}{{/link-to}}</th>
+      <td>{{book.author}}</td>
     </tr>
   {{/each}}
   </tbody>
