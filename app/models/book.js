@@ -5,7 +5,7 @@ export default DS.Model.extend({
 
     title: DS.attr('string'),
     price: DS.attr('number'),
-    //author: DS.belongsTo('author'),
+    author: DS.belongsTo('book', {inverse: 'author'}),
     publisher: DS.attr('string')
 
 });
