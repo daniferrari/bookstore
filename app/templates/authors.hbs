@@ -1,7 +1,7 @@
 <h1>List all authors</h1>
 
 {{#link-to 'authors.new' class="btn btn-primary"}}Add new author{{/link-to}}
-
+<br><br>
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -14,6 +14,9 @@
     <tr>
       <td>{{author.name}}</td>
     </tr>
+ <!--   <tr>
+      <td>{{author.books}}</td>
+    </tr> -->
   {{/each}}
   </tbody>
 </table>
