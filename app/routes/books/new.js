@@ -4,16 +4,19 @@ export default Ember.Route.extend({
 
   model(){
   return Ember.RSVP.hash({
-    books: this.store.createRecord('book'),
+    book: this.store.createRecord('book'),
     authors: this.store.findAll('author')
     })
   },
 
-  actions:
-  {
-    saveBook(book){
-      book.save().then(() => this.transitionTo('books'));
-    }
+  actions: {
+
+  saveBook(newBook){
+    let authorId = this.controller.get('author');
+    let author = this.get('store').peekRecord('author', authorId);
+    newBook.set('author', author);
+    newBook.save().then(() => this.transitionTo('books'));
   }
+}
 
 });

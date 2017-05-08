@@ -15,9 +15,15 @@
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Author</label>
+
     <div class="col-sm-10">
-      {{input type="text" value=model.author.name class="form-control" placeholder="Please enter the Author of the book"}}
+      <select onchange={{action "teste" value="target.value"}}>
+      {{#each model.authors as |author|}}
+        <option value={{author.id}}>{{author.name}}</option>
+      {{/each}}
+    </select>
     </div>
+
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">Publisher</label>
@@ -27,7 +33,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" {{action 'saveBook' model}}>Add to books list</button>
+      <button type="submit" class="btn btn-default" {{action 'saveBook' model.book}} disabled={{unless model.isValid false}}>Add to books list</button>
     </div>
   </div>
 </div>

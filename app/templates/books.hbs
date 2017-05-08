@@ -13,7 +13,7 @@
   {{#each model as |book|}}
     <tr>
       <th>{{#link-to 'books.view' book.id }}{{book.title}}{{/link-to}}</th>
-      <td>{{book.author}}</td>
+      <td>{{book.author.name}}</td>
     </tr>
   {{/each}}
   </tbody>
