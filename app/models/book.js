@@ -5,7 +5,7 @@ export default DS.Model.extend({
 
 
     isTitleValid: Ember.computed.notEmpty('title'),
-    isPriceValid: Ember.computed.notEmpty('price'),
+    isPriceValid: Ember.computed.match('price', /^[0-9]/),
     isPublisherValid: Ember.computed.notEmpty('publisher'),
     isValid: Ember.computed.and('isTitleValid', 'isPriceValid','isPublisherValid'),
     isDisabled: Ember.computed.not('isValid'),
