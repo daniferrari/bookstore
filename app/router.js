@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('view', { path: '/:book_id/view' });
   });
 
+  this.route('home');
 
   this.route('authors', function() {
     this.route('new');
